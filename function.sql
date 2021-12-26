@@ -3,11 +3,11 @@ LANGUAGE 'plpgsql'
 AS
 $$
     DECLARE
-        name_comics int;
+        number_of_comics int;
     BEGIN
-        SELECT COUNT(comics_name) INTO name_comics
+        SELECT COUNT(comics_name) INTO number_of_comics
         FROM Comics WHERE Comics.writer_id = writer_id_n;
-        RETURN name_comics;
+        RETURN number_of_comics;
     END;
 $$;
 SELECT count_comics_by_author('WR1')
